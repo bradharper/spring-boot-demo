@@ -11,10 +11,10 @@ VOLUME /tmp
 EXPOSE 8080
 
 # The application's jar file
-ARG JAR_FILE=target/example.smallest-0.0.1-SNAPSHOT.war
+ARG JAR_FILE=target/spring-boot-demo-0.0.1-SNAPSHOT.jar
 
 # Add the application's jar to the container
-ADD ${JAR_FILE} example.smallest-0.0.1-SNAPSHOT.war
+ADD ${JAR_FILE} spring-boot-demo-0.0.1-SNAPSHOT.jar
 
 # Run the jar file
-ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/example.smallest-0.0.1-SNAPSHOT.war"]
+ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/spring-boot-demo-0.0.1-SNAPSHOT.jar"]
