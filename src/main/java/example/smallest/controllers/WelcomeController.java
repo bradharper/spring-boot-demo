@@ -12,10 +12,13 @@ public class WelcomeController {
 	@Value(value = "${test.property.message}")
 	String propertyMessage;
 
+	@Value("${TEST.ENVIRONMENT.MESSAGE}")
+	String environmentVariableMessage="--";
+
 	@RequestMapping(method = RequestMethod.GET, produces = {"application/json"})
 	public @ResponseBody String helloWorld() {
 		
 
-		return "Hello World - "+propertyMessage;
+		return "Spring Boot Demo - \n"+propertyMessage+"\n"+environmentVariableMessage;
 	}
 }
