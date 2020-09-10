@@ -10,13 +10,13 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class WelcomeController {
 
 	@Value(value = "${test.property.message}")
-	String propertyMessage;
+	String propertyMessage="-unset-";
 
 	@Value("${TEST.ENVIRONMENT.MESSAGE}")
-	String environmentVariableMessage="--";
+	String environmentVariableMessage="-unset-";
 
 	@Value("${TEST.SECRET.ENVIRONMENT.MESSAGE}")
-	String secretEnvironmentVariableMessage="--";
+	String secretEnvironmentVariableMessage="-unset-";
 
 	@RequestMapping(method = RequestMethod.GET, produces = {"application/json"})
 	public @ResponseBody String helloWorld() {
