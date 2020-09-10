@@ -15,6 +15,9 @@ public class WelcomeController {
 	@Value("${TEST.ENVIRONMENT.MESSAGE}")
 	String environmentVariableMessage="--";
 
+	@Value("${TEST.SECRET.ENVIRONMENT.MESSAGE}")
+	String secretEnvironmentVariableMessage="--";
+
 	@RequestMapping(method = RequestMethod.GET, produces = {"application/json"})
 	public @ResponseBody String helloWorld() {
 		
