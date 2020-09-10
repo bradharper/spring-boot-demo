@@ -28,7 +28,6 @@ public class WelcomeController {
 			allEnvironmentVars.append(envName).append(" = ").append(env.get(envName)).append("\n");
 		}
 
-		return "*** Spring Boot Demo *** \n"+propertyMessage+"\n"+environmentVariableMessage+"\n\n\n"
-				+allEnvironmentVars.toString();
+		return "*** Spring Boot Demo ***\n\n\n" +allEnvironmentVars.toString();
 	}
 }
