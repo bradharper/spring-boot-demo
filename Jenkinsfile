@@ -34,7 +34,7 @@ pipeline {
                 script {
                     openshift.withCluster() {
                         openshift.withProject() {
-                            openshift.newApp(templatePath)
+                            openshift.newApp(templatePath, "--name=spring-boot-app-jenkinsfile")
                         }
                     }
                 }
