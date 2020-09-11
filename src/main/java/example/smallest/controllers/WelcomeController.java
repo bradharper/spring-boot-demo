@@ -11,10 +11,10 @@ import java.util.Map;
 @Controller
 public class WelcomeController {
 
-	@Value(value = "${test.property.message}")
+	@Value(value = "${test.property.message:Default}")
 	String propertyMessage="-unset-";
 
-	@Value("${TEST.ENVIRONMENT.MESSAGE}")
+	@Value("${TEST.ENVIRONMENT.MESSAGE:Default}")
 	String environmentVariableMessage="-unset-";
 
 
