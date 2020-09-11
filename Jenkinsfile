@@ -17,9 +17,10 @@ pipeline {
                script {
                    openshift.withCluster() {
                    openshift.withProject() {
-                       sh "oc new-app lawwton/image-filter"
-                       sh "oc new-app lawwton/image-ui -e GRAY_FILTER_SERVICE_HOST=image-filter -e GRAY_FILTER_SERVICE_PORT=8081"
-                       sh "oc expose service image-ui"
+                       sh "oc new-app registry.access.redhat.com/redhat-openjdk-18/openjdk18-openshift~http://github.com/bradharper/spring-boot-demo.git  --name=spring-boot-app-jenkinsfile -e TEST.ENVIRONMENT.MESSAGE=test”
+                       sh "oc set env dc/spring-boot-app-jenkinsfile test.property.message=Different"
+                       sh "oc set env dc/spring-boot-app-jenkinsfile TEST.ENVIRONMENT.MESSAGE=DIFFERENT"
+                       sh "oc expose svc/spring-boot-app-jenkinsfile"
                      }
                    }
                  }
